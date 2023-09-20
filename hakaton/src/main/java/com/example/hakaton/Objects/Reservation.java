@@ -28,9 +28,13 @@ public class Reservation {
     @Column (name = "time")
     private String time;
 
+    @Column(name = "comment")
+    private String comment;
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "reservation_id")
-//    private List<Service> service;
+    @ElementCollection
+    @CollectionTable(name ="reservation_services", joinColumns = @JoinColumn(name ="reservation_id"))
+    @Enumerated(EnumType.STRING)
+    @Column(name = "service_type")
+    private List<Service> service;
 
 }
