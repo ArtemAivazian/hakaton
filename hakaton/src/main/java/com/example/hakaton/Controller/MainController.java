@@ -15,7 +15,6 @@ public class MainController {
 
     private final ReservationService reservationService;
 
-
     @GetMapping
     public List<?> getAllReservations(){
         return reservationService.getAllReservations();
@@ -26,6 +25,5 @@ public class MainController {
         reservationService.createNewReservation(reservation);
         return "New student is added";
     }
-
 
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation Form</title>
+</head>
+<body>
+<h1>Reservation Form</h1>
+<form id="reservationForm" action="/reservation/add" method="post">
+    <label for="date">Date:</label>
+    <input type="text" id="date" name="date" required><br><br>
+
+    <label for="time">Time:</label>
+    <input type="text" id="time" name="time" required><br><br>
+
+    <label for="comment">Comment:</label>
+    <input type="text" id="comment" name="comment"><br><br>
+
+    <label for="service">Service:</label>
+    <select id="service" name="service" multiple>
+        <option value="CHANGE">Change</option>
+        <option value="BUY">Buy</option>
+    </select><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    document.getElementById("reservationForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+        const comment = document.getElementById("comment").value;
+        const serviceOptions = document.getElementById("service").selectedOptions;
+        const services = Array.from(serviceOptions).map(option => option.value);
+
+        const data = {
+            "date": date,
+            "time": time,
+            "comment": comment,
+            "service": services
+        };
+
+        fetch("http://localhost:8080/reservation/add", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    alert("Reservation submitted successfully!");
+                } else {
+                    alert("Error submitting reservation.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Error submitting reservation.");
+            });
+    });
+</script>
+</body>
+</html>
