@@ -17,7 +17,7 @@ public class MainController {
 
 
     @GetMapping
-    public List<Reservation> getAllReservations(){
+    public List<?> getAllReservations(){
         return reservationService.getAllReservations();
     }
 
