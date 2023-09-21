@@ -22,7 +22,7 @@
     <tr th:each="services : ${service}">
         <td>
             <!-- Create a clickable link to open the form.html page for each item -->
-            <a th:href="@{'/service-reservation-form?service_name=' + ${services.service_name} + '&price=' + ${services.price} + '&date=' + ${services.date} + '&time=' + ${services.time}}"> <!-- Assuming you use '/form/{id}' to open the form for a specific item -->
+            <a th:href="@{'/service-reservation-form?service_name=' + ${services.service_name} + '&price=' + ${services.price} + '&date=' + ${services.date} + '&time=' + ${services.time} + '&id=' + ${services.id}}">
                 <span th:text="${services.service_name}"></span>
             </a>
         </td>

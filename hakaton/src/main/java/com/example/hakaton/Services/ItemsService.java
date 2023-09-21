@@ -28,8 +28,4 @@ public class ItemsService {
     public List<Items> getAllItems(){
         return itemRepository.findAll();
     }
-
-    public Optional<Items> getItemById(UUID id){
-       return itemRepository.findById(id);
-    }
 }

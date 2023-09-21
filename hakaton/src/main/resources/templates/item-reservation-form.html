@@ -7,6 +7,8 @@
 <body>
 <h1>Items Reservation Form</h1>
 <form id="reservationForm" action="item/add" method="post">
+  <input type="hidden" id="itemId" name="item_id" th:value="${param.id}">
+
   <label for="itemName">Item Name:</label>
   <input type="text" id="itemName" name="item_name" required th:value="${param.item_name}"><br><br>
 
