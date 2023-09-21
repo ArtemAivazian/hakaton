@@ -18,7 +18,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Reservation {
+public class ServiceReservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -31,6 +31,15 @@ public class Reservation {
 
     @Column(name = "comment")
     private String comment;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "vin")
+    private String vin;
+
+    @Column(name = "car_num")
+    private String car_num;
 
     @ElementCollection
     @CollectionTable(name ="reservation_services", joinColumns = @JoinColumn(name ="reservation_id"))

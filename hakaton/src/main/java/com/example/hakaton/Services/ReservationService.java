@@ -1,8 +1,7 @@
 package com.example.hakaton.Services;
 
-import com.example.hakaton.Objects.Reservation;
+import com.example.hakaton.Objects.ServiceReservation;
 import com.example.hakaton.Repositories.ReservationRepository;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +18,11 @@ public class ReservationService {
     private ReservationRepository reservationRepository;
 
     public List<?> getAllReservations(){
-        List<Reservation> reservations = reservationRepository.findAll();
+        List<ServiceReservation> reservations = reservationRepository.findAll();
         return reservations;
     }
 
-    public void createNewReservation(Reservation reservation){
+    public void createNewReservation(ServiceReservation reservation){
         reservationRepository.save(reservation);
         log.info("Saving new reservation : Id {}", reservation.getId());
     }

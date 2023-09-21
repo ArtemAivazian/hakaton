@@ -8,6 +8,6 @@ public class ReservationFormController {
 
     @GetMapping("/")
     public String reservation() {
-        return "reservation";
+        return "service-reservation-form";
     }
 }

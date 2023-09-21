@@ -1,7 +1,7 @@
 package com.example.hakaton.Controller;
 
 
-import com.example.hakaton.Objects.Reservation;
+import com.example.hakaton.Objects.ServiceReservation;
 import com.example.hakaton.Services.ReservationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,7 @@ public class ReservationController {
     }
 
     @PostMapping("/add")
-    public String createReservation(@RequestBody Reservation reservation){
+    public String createReservation(@RequestBody ServiceReservation reservation){
         reservationService.createNewReservation(reservation);
         return "New reservation is added";
     }

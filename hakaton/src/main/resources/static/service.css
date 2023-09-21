@@ -72,3 +72,41 @@ input[type="date"] {
     border-radius: 4px;
     font-size: 16px;
 }
+
+/* Style the time input field */
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style the email input field */
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style the checkbox group */
+.checkbox-group {
+    display: flex; /* Use flexbox to align items in a row */
+    flex-wrap: wrap; /* Wrap the checkboxes to the next line if needed */
+    margin-bottom: 15px;
+}
+
+/* Style the checkboxes and labels */
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px; /* Add some spacing between checkboxes */
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    white-space: nowrap; /* Prevent labels from wrapping to the next line */
+}
+
