@@ -1,112 +1,50 @@
-/* Apply styles to the body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* service.css */
+
+/* Reset some default styles for better consistency */
+body, h1, table {
     margin: 0;
     padding: 0;
 }
 
-/* Center the form on the page */
-#reservationForm {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Style the form headings */
-h1 {
-    text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-/* Style form labels and inputs */
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+h1 {
+    text-align: center;
+    margin-top: 20px;
 }
 
-input[type="text"],
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Style the multiple select box */
-select[multiple] {
-    height: auto;
+th, td {
+    padding: 10px 15px;
+    text-align: left;
 }
 
-/* Style the submit button */
-input[type="submit"] {
+thead {
     background-color: #333;
     color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
 }
 
-input[type="submit"]:hover {
-    background-color: #555;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-/* Add some spacing to form elements */
-br {
-    clear: both;
+a {
+    text-decoration: none;
+    color: #007BFF;
 }
 
-/* Style the date input field */
-input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-/* Style the time input field */
-input[type="time"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-/* Style the email input field */
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-/* Style the checkbox group */
-.checkbox-group {
-    display: flex; /* Use flexbox to align items in a row */
-    flex-wrap: wrap; /* Wrap the checkboxes to the next line if needed */
-    margin-bottom: 15px;
-}
-
-/* Style the checkboxes and labels */
-.checkbox-group input[type="checkbox"] {
-    margin-right: 10px; /* Add some spacing between checkboxes */
-}
-
-.checkbox-group label {
-    font-weight: normal;
-    white-space: nowrap; /* Prevent labels from wrapping to the next line */
+a:hover {
+    text-decoration: underline;
 }
 

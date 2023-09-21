@@ -1,9 +1,6 @@
 package com.example.hakaton.Controller;
 
-import com.example.hakaton.Objects.Items;
-import com.example.hakaton.Objects.Service;
 import com.example.hakaton.Objects.Services;
-import com.example.hakaton.Services.ItemsService;
 import com.example.hakaton.Services.ServiceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

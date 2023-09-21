@@ -5,6 +5,7 @@ import com.example.hakaton.Objects.Items;
 import com.example.hakaton.Repositories.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +17,8 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ItemsService {
 
-    private ItemRepository itemRepository;
+    @Autowired
+    private final ItemRepository itemRepository;
 
     public void createItem(Items item){
         itemRepository.save(item);

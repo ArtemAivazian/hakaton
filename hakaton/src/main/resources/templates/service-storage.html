@@ -10,7 +10,6 @@
 <table>
     <thead>
     <tr>
-<!--        <th>ID</th>-->
         <th>Service</th>
         <th>Price</th>
         <th>Date</th>
@@ -21,7 +20,6 @@
     <tbody>
     <!-- Iterate over the list of items and display them in the table -->
     <tr th:each="services : ${service}">
-<!--        <td th:text="${services.id}"></td>-->
         <td>
             <!-- Create a clickable link to open the form.html page for each item -->
             <a th:href="@{'/service-reservation-form?service_name=' + ${services.service_name} + '&price=' + ${services.price} + '&date=' + ${services.date} + '&time=' + ${services.time}}"> <!-- Assuming you use '/form/{id}' to open the form for a specific item -->

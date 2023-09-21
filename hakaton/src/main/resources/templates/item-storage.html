@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Item Storage</title>
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/item.css}">
 </head>
 <body>
-<div class="grid-container">
-    <div class="grid-item">Item 1</div>
-    <div class="grid-item">Item 2</div>
-    <div class="grid-item">Item 3</div>
-    <!-- Add more grid items as needed -->
-</div>
+<h1>Item Storage</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <!-- Add more columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterate over the list of items and display them in the table -->
+    <tr th:each="items : ${item}">
+        <td>
+            <a th:href="@{'/item-reservation-form?item_name=' + ${items.item_name} + '&price=' + ${items.price}}">
+                <span th:text="${items.item_name}"></span>
+            </a>
+        </td>
+        <td th:text="${items.price}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
 

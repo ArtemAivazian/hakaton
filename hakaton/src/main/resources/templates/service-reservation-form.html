@@ -2,16 +2,19 @@
 <html>
 <head>
     <title>Service Reservation Form</title>
-    <link rel="stylesheet" type="text/css" href="" th:href="@{/service.css}">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/service-reservation.css}">
 </head>
 <body>
 <h1>Service Reservation Form</h1>
 <form id="reservationForm" action="/reservation/add" method="post">
+    <label for="service_name">Service:</label>
+    <input type="text" id="service_name" name="service_name" required th:value="${param.service_name}"><br><br>
+
     <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required><br><br>
+    <input type="date" id="date" name="date" required th:value="${param.date}"><br><br>
 
     <label for="time">Time:</label>
-    <input type="time" id="time" name="time" required>
+    <input type="time" id="time" name="time" required th:value="${param.time}">
 
     <label for="comment">Comment:</label>
     <input type="text" id="comment" name="comment"><br><br>
@@ -24,14 +27,6 @@
 
     <label for="car_number">Car number:</label>
     <input type="text" id="car_number" name="car_number" required><br><br>
-
-    <label>Service:</label>
-    <div class="checkbox-group">
-        <input type="checkbox" id="serviceChange" name="service" value="CHANGE">
-        <label for="serviceChange">Change</label><br>
-        <input type="checkbox" id="serviceBuy" name="service" value="BUY">
-        <label for="serviceBuy">Buy</label><br>
-    </div><br>
 
     <input type="submit" value="Submit">
 </form>
@@ -46,22 +41,19 @@
         const email = document.getElementById("email").value;
         const car_number = document.getElementById("car_number").value;
         const vin = document.getElementById("vin").value;
-
-        // Get all selected checkboxes for "service"
-        const serviceCheckboxes = document.querySelectorAll('input[name="service"]:checked');
-        const services = Array.from(serviceCheckboxes).map(checkbox => checkbox.value);
+        const name = document.getElementById("service_name").value;
 
         const data = {
             "date": date,
             "time": time,
             "comment": comment,
             "email": email,
-            "car_number": car_number,
+            "car_num": car_number,
             "vin": vin,
-            "service": services
+            "service_name": name
         };
 
-        fetch("http://localhost:8080/reservation/add", {
+        fetch("http://localhost:8080/service/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

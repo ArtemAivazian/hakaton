@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "reservations")
+@Table(name = "service_reservations")
 
 
 @Data
@@ -23,6 +23,9 @@ public class ServiceReservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
+
+    @Column (name = "service_name")
+    private String service_name;
 
     @Column (name = "date")
     private Date date;
@@ -40,11 +43,5 @@ public class ServiceReservation {
 
     @Column(name = "car_num")
     private String car_num;
-
-    @ElementCollection
-    @CollectionTable(name ="reservation_services", joinColumns = @JoinColumn(name ="reservation_id"))
-    @Enumerated(EnumType.STRING)
-    @Column(name = "service_type")
-    private List<Service> service;
 
 }

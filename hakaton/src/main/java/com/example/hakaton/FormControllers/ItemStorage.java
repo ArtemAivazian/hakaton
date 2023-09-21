@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ItemReservationFormController {
+public class ItemStorage {
 
-    @GetMapping("/item-reservation-form")
+    @GetMapping("/item-storage")
     public String itemReservation() {
-        return "item-reservation-form";
+        return "item-storage";
     }
 }
