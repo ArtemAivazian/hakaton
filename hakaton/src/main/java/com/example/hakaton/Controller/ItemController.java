@@ -1,21 +1,30 @@
 package com.example.hakaton.Controller;
 
-import com.example.hakaton.Objects.ItemsReservation;
-import com.example.hakaton.Services.ItemService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+import com.example.hakaton.Objects.Items;
+import com.example.hakaton.Services.ItemsService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
+
+@Controller
 @RequiredArgsConstructor
-@RequestMapping("/item")
+@RequestMapping("/items-storage")
 public class ItemController {
-    private final ItemService itemService;
+    private ItemsService itemsService;
+
+
     @PostMapping("/add")
-    public String createItemReservation(@RequestBody ItemsReservation itemsReservation){
-        itemService.createItemReservation(itemsReservation);
-        return "New item reservation is added";
+    public String createItem(@RequestBody Items item){
+        itemsService.createItem(item);
+        return "added new item";
+    }
+
+    public String getAllItems(Model model){
+        model.addAttribute(itemsService.getAllItems());
+        return "item-storage";
     }
 }
