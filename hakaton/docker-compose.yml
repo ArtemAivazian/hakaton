@@ -6,8 +6,6 @@ services:
       POSTGRES_USER: forh
       POSTGRES_PASSWORD: hak
       PGDATA: /data/postgres
-    volumes:
-      - db:/data/postgres
     ports:
       - "5432:5432"
     networks:

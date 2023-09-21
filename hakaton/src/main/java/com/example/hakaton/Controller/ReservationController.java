@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/reservation")
-public class MainController {
+public class ReservationController {
 
     private final ReservationService reservationService;
 
@@ -23,7 +23,7 @@ public class MainController {
     @PostMapping("/add")
     public String createReservation(@RequestBody Reservation reservation){
         reservationService.createNewReservation(reservation);
-        return "New student is added";
+        return "New reservation is added";
     }
 
 }

@@ -2,15 +2,16 @@
 <html>
 <head>
     <title>Reservation Form</title>
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/styles.css}">
 </head>
 <body>
-<h1>Reservation Form</h1>
+<h1>Service Reservation Form</h1>
 <form id="reservationForm" action="/reservation/add" method="post">
     <label for="date">Date:</label>
-    <input type="text" id="date" name="date" required><br><br>
+    <input type="date" id="date" name="date" required><br><br>
 
     <label for="time">Time:</label>
-    <input type="text" id="time" name="time" required><br><br>
+    <input type="time" id="time" name="time" required>
 
     <label for="comment">Comment:</label>
     <input type="text" id="comment" name="comment"><br><br>

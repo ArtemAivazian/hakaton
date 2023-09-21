@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+import java.sql.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,7 +25,7 @@ public class Reservation {
     private UUID id;
 
     @Column (name = "date")
-    private String date;
+    private Date date;
     @Column (name = "time")
     private String time;
 

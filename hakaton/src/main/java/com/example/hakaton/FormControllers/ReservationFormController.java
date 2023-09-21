@@ -1,4 +1,4 @@
-package com.example.hakaton.Controller;
+package com.example.hakaton.FormControllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ReservationFormController {
 
     @GetMapping("/")
-    public String index() {
-        return "index";
+    public String reservation() {
+        return "reservation";
     }
 }
