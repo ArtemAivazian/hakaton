@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Storage</title>
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/service.css}">
+</head>
+<body>
+<h1>Sevice Storage</h1>
+
+<table>
+    <thead>
+    <tr>
+<!--        <th>ID</th>-->
+        <th>Service</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>Time</th>
+        <!-- Add more columns as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterate over the list of items and display them in the table -->
+    <tr th:each="services : ${service}">
+<!--        <td th:text="${services.id}"></td>-->
+        <td>
+            <!-- Create a clickable link to open the form.html page for each item -->
+            <a th:href="@{'/service-reservation-form?service_name=' + ${services.service_name} + '&price=' + ${services.price} + '&date=' + ${services.date} + '&time=' + ${services.time}}"> <!-- Assuming you use '/form/{id}' to open the form for a specific item -->
+                <span th:text="${services.service_name}"></span>
+            </a>
+        </td>
+        <td th:text="${services.price}"></td>
+        <td th:text="${services.date}"></td>
+        <td th:text="${services.time}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
