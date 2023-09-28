@@ -1,23 +1,20 @@
-package com.example.hakaton.Controller;
+package com.example.hakaton.API;
 
 
-import com.example.hakaton.Objects.ServiceReservation;
-import com.example.hakaton.Services.ServiceReservationService;
-import lombok.RequiredArgsConstructor;
+import com.example.hakaton.Entity.ServiceReservation;
+import com.example.hakaton.Service.ServiceReservationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/service")
 public class ServiceReservationController {
 
     private final ServiceReservationService reservationService;
 
-    @GetMapping
-    public List<?> getAllReservations(){
-        return reservationService.getAllReservations();
+    @Autowired
+    public ServiceReservationController(ServiceReservationService reservationService) {
+        this.reservationService = reservationService;
     }
 
     @PostMapping("/add")

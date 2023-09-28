@@ -1,27 +1,33 @@
-package com.example.hakaton.Objects;
-
+package com.example.hakaton.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
 import java.util.UUID;
 
 @Entity
-@Table (name = "items")
+@Table (name = "services")
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Items {
+public class Services {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name = "id")
     private UUID id;
-    @Column (name = "item_name")
-    private String item_name;
+    @Column (name = "service_name")
+    private String service_name;
     @Column (name = "price")
     private Integer price;
+
+    @Column (name = "date")
+    private Date date;
+
+    @Column (name = "time")
+    private String time;
 }

@@ -1,12 +1,10 @@
-package com.example.hakaton.Repositories;
+package com.example.hakaton.DataAccess;
 
 
-import com.example.hakaton.Objects.Items;
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
+import com.example.hakaton.Entity.Items;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
 import java.util.UUID;
 
 @Repository

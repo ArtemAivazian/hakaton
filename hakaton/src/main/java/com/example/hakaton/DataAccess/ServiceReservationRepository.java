@@ -1,6 +1,6 @@
-package com.example.hakaton.Repositories;
+package com.example.hakaton.DataAccess;
 
-import com.example.hakaton.Objects.ServiceReservation;
+import com.example.hakaton.Entity.ServiceReservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

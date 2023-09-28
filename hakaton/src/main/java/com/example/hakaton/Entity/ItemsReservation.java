@@ -1,4 +1,4 @@
-package com.example.hakaton.Objects;
+package com.example.hakaton.Entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

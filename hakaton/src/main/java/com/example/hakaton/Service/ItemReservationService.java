@@ -1,20 +1,23 @@
-package com.example.hakaton.Services;
+package com.example.hakaton.Service;
 
 
-import com.example.hakaton.Objects.ItemsReservation;
-import com.example.hakaton.Repositories.ItemReservationRepository;
+import com.example.hakaton.Entity.ItemsReservation;
+import com.example.hakaton.DataAccess.ItemReservationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
-@Slf4j
+@Slf4j //for logging
 public class ItemReservationService {
 
+    private final ItemReservationRepository itemRepository;
+
     @Autowired
-    private ItemReservationRepository itemRepository;
+    public ItemReservationService(ItemReservationRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
 
     public void createItemReservation(ItemsReservation itemReservation){
         itemRepository.save(itemReservation);

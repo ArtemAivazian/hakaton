@@ -11,6 +11,8 @@ services:
     networks:
       - db
     restart: unless-stopped
+    volumes:
+      - db:/data/postgres
 
 networks:
   db:

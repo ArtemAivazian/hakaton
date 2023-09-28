@@ -1,24 +1,25 @@
-package com.example.hakaton.Services;
+package com.example.hakaton.Service;
 
 
-import com.example.hakaton.Objects.Items;
-import com.example.hakaton.Repositories.ItemRepository;
+import com.example.hakaton.Entity.Items;
+import com.example.hakaton.DataAccess.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 @Service
-@Slf4j
-@RequiredArgsConstructor
+@Slf4j //for logging
 public class ItemsService {
 
-    @Autowired
     private final ItemRepository itemRepository;
+
+    @Autowired
+    public ItemsService(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
 
     public void createItem(Items item){
         itemRepository.save(item);
