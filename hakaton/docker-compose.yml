@@ -1,10 +1,10 @@
 services:
   db:
-    container_name: postgres-daniil
+    container_name: postgres-pneu
     image: postgres
     environment:
-      POSTGRES_USER: forh
-      POSTGRES_PASSWORD: hak
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 123
       PGDATA: /data/postgres
     ports:
       - "5432:5432"
