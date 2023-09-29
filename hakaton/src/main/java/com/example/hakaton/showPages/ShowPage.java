@@ -1,4 +1,4 @@
-package com.example.hakaton.ShowPages;
+package com.example.hakaton.showPages;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

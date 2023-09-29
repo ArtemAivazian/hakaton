@@ -1,20 +1,20 @@
 package com.example.hakaton.API;
 
-import com.example.hakaton.Entity.Services;
-import com.example.hakaton.Service.ServiceService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.hakaton.entity.Services;
+import com.example.hakaton.service.ServiceService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class ServiceController {
 
     private final ServiceService serviceService;
 
-    @Autowired
+
     public ServiceController(ServiceService serviceService) {
         this.serviceService = serviceService;
     }
@@ -23,6 +23,12 @@ public class ServiceController {
     @ResponseBody
     public void createService(@RequestBody Services service) {
         serviceService.createService(service);
+    }
+
+    @DeleteMapping("/deleteService/{serviceId}")
+    @ResponseBody
+    public void deleteService(@PathVariable UUID serviceId) {
+        serviceService.deleteService(serviceId);
     }
 
     @GetMapping("/displayServiceStorage")

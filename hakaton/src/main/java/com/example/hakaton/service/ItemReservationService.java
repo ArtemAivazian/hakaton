@@ -1,10 +1,9 @@
-package com.example.hakaton.Service;
+package com.example.hakaton.service;
 
 
-import com.example.hakaton.Entity.ItemsReservation;
-import com.example.hakaton.DataAccess.ItemReservationRepository;
+import com.example.hakaton.entity.ItemsReservation;
+import com.example.hakaton.DAO.ItemReservationRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,7 +12,6 @@ public class ItemReservationService {
 
     private final ItemReservationRepository itemRepository;
 
-    @Autowired
     public ItemReservationService(ItemReservationRepository itemRepository) {
         this.itemRepository = itemRepository;
     }

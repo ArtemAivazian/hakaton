@@ -7,6 +7,8 @@
 <body>
 <h1>Service Reservation Form</h1>
 <form id="reservationForm" action="/reservation/add" method="post">
+    <input type="hidden" id="serviceId" name="service_id" th:value="${param.id}">
+
     <label for="service_name">Service:</label>
     <input type="text" id="service_name" name="service_name" required th:value="${param.service_name}"><br><br>
 
@@ -63,6 +65,7 @@
             .then(response => {
                 if (response.status === 200) {
                     alert("Reservation submitted successfully!");
+                    window.location.href = "http://localhost:8080/displayServiceStorage";
                 } else {
                     alert("Error submitting reservation.");
                 }
@@ -71,6 +74,14 @@
                 console.error("Error:", error);
                 alert("Error submitting reservation.");
             });
+
+        const serviceId = document.getElementById("serviceId").value;
+        fetch(`http://localhost:8080/deleteService/${serviceId}`, {
+            method: "DELETE"
+        }).catch(error => {
+            console.error("Error:", error);
+            alert("Error deleting service.");
+        });
     });
 </script>
 </body>

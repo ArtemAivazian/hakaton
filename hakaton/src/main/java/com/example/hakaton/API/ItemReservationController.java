@@ -1,19 +1,15 @@
 package com.example.hakaton.API;
 
-import com.example.hakaton.Entity.ItemsReservation;
-import com.example.hakaton.Service.ItemReservationService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.hakaton.entity.ItemsReservation;
+import com.example.hakaton.service.ItemReservationService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/item")
 public class ItemReservationController {
 
-
     private final ItemReservationService itemService;
 
-    @Autowired
     public ItemReservationController(ItemReservationService itemService) {
         this.itemService = itemService;
     }

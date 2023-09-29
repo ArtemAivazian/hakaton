@@ -49,7 +49,8 @@
     })
             .then(response => {
               if (response.status === 200) {
-                alert("Reservation submitted successfully!");
+                alert("Reservation was added successfully!");
+                window.location.href = "http://localhost:8080/displayItemStorage";
               } else {
                 alert("Error submitting reservation.");
               }
@@ -58,6 +59,14 @@
               console.error("Error:", error);
               alert("Error submitting reservation.");
             });
+
+    const itemId = document.getElementById("itemId").value;
+    fetch(`http://localhost:8080/deleteItem/${itemId}`, {
+      method: "DELETE"
+    }).catch(error => {
+      console.error("Error:", error);
+      alert("Error deleting item.");
+    });
   });
 </script>
 </body>
