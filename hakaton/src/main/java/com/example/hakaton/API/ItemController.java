@@ -2,6 +2,7 @@ package com.example.hakaton.API;
 
 
 import com.example.hakaton.entity.Items;
+import com.example.hakaton.exeption.ApiRequestException;
 import com.example.hakaton.service.ItemsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +36,6 @@ public class ItemController {
     public String displayData(Model model) {
         List<Items> data = itemsService.getAllItems();
         model.addAttribute("item", data);
-        return "itemStorage"; // Return the name of the Thymeleaf template
+        return "itemStorage";
     }
 }

@@ -2,6 +2,7 @@ package com.example.hakaton.service;
 
 import com.example.hakaton.entity.Services;
 import com.example.hakaton.DAO.ServiceRepository;
+import com.example.hakaton.exeption.ApiRequestException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class ServiceService {
     public void createService(Services service){
         var serviceOptional = serviceRepository.findByDateAndTime(service.getDate(), service.getTime());
         if (serviceOptional.isPresent()) {
-            throw new IllegalStateException("Time is not available");
+            throw new ApiRequestException("There is already a service for this date");
         }
         serviceRepository.save(service);
         log.info("new service id : {}", service.getId());
@@ -33,7 +34,7 @@ public class ServiceService {
             serviceRepository.deleteById(serviceId);
             log.info("Deleted service with id: {}", serviceId);
         } else {
-            throw new IllegalStateException("Service not found for deletion");
+            throw new ApiRequestException("Service not found for deletion");
         }
     }
 

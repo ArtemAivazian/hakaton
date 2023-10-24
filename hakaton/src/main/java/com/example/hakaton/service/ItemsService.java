@@ -3,6 +3,7 @@ package com.example.hakaton.service;
 
 import com.example.hakaton.entity.Items;
 import com.example.hakaton.DAO.ItemRepository;
+import com.example.hakaton.exeption.ApiRequestException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,8 @@ public class ItemsService {
             itemRepository.deleteById(itemId);
             log.info("Deleted item with id: {}", itemId);
         } else {
-            throw new IllegalStateException("Item not found for deletion");
+            throw new ApiRequestException("Item not found for deletion");
+//            throw new IllegalStateException("Item not found for deletion");
         }
     }
 

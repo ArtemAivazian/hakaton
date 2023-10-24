@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Item Storage</title>
-    <link rel="stylesheet" type="text/css" href="" th:href="@{/item.css}">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/style/item.css}">
 </head>
 <body>
 <h1>Item Storage</h1>
@@ -19,7 +19,10 @@
     <!-- Iterate over the list of items and display them in the table -->
     <tr th:each="items : ${item}">
         <td>
-            <a th:href="@{'/item-reservation-form?item_name=' + ${items.item_name} + '&price=' + ${items.price} + '&id=' + ${items.id}}">
+            <a th:href="@{'/item-reservation-form?item_name=' + ${items.item_name} +
+                        '&price=' + ${items.price} +
+                        '&id=' + ${items.id}}"
+            >
                 <span th:text="${items.item_name}"></span>
             </a>
         </td>
